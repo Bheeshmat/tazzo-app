@@ -5,6 +5,11 @@ class HomeController < ApplicationController
   end
 
   def getMap
-    # debugger
+    @coordinate = map_params
+  end
+
+private
+  def map_params
+    params.permit(:Latitude, :Longitude)
   end
 end

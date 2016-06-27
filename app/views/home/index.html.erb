@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="jumbotron">
+      <h1>Welcome to the map app!</h1>
+      <p>This app helps you see the map based on the latitude and longitude you enter </p>
+    </div>
+  </div>
+  <div class="row">
+    <%= form_tag({controller: "home", action: "getMap"}, method: "get", class: "form-horizontal", remote: true) do %>
+
+    <div class="form-group">
+        <%= label_tag("Latitude", nil, class: "col-md-4 control-label") %>
+      <div class="col-md-4">
+        <%= text_field_tag("Latitude", nil, class: "form-control input-md") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <%= label_tag("Longitude", nil, class: "col-md-4 control-label") %>
+      <div class="col-md-4">
+        <%= text_field_tag("Longitude", nil, class: "form-control input-md") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag("Show", nil, class: "col-md-4 control-label") %>
+      <!-- <label class="col-md-4 control-label" for="singlebutton"></label> -->
+      <div class="col-md-4">
+        <%= submit_tag("Show", class: "btn btn-primary") %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Show</button>
+  </div>
+</div> -->
